@@ -1,10 +1,11 @@
+## no critic (Moose::RequireMakeImmutable)
 package MooseX::MojoControllerExposingAttributes;
 
 use strict;
 use warnings;
 
 # ensure loaded, even but don't have the side effects on this class
-use Moose ();
+use Moose            ();
 use MooseX::NonMoose ();
 
 # modules we use ourselves
@@ -21,10 +22,10 @@ my $baseclass = 'Mojolicious::Controller';
 # directly, we need a customer importer
 
 my ($import) = Moose::Exporter->build_import_methods(
+
     # give the class the role that has the 'controller_method_name' method in it
-    base_class_roles => [
-        'MooseX::MojoControllerExposingAttributes::Role::Class'
-    ],
+    base_class_roles =>
+        ['MooseX::MojoControllerExposingAttributes::Role::Class'],
 
     # this allows the meta class to have 'get_attribute_for_mojo_helper' which
     # is used by 'controller_method_name' to do the lookup
@@ -42,7 +43,7 @@ sub import {
     # TODO, shouldn't we do something with unimport also so we can "no Moose" ?
     MooseX::NonMoose->import::into($target);
     Moose->import::into($target);
-    
+
     # set the baseclass
     # this must happen AFTER we've moosified the package, but BEFORE the
     # M::E import routine monkeys around with the metaclass (a side effect
@@ -70,8 +71,6 @@ MooseX::MojoControllerExposingAttributes - expose controller attributes to Mojol
         is     => 'ro',
         traits => ['ExposeMojo'],
     );
-
-    has some
 
     # then later in a template:
     <%= ctrl->some_attribute %>
