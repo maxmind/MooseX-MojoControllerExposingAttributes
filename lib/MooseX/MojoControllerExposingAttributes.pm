@@ -14,7 +14,7 @@ use MooseX::MojoControllerExposingAttributes::Trait::Attribute;
 use MooseX::MojoControllerExposingAttributes::Trait::Class;
 use Import::Into;
 
-our $VERSION = '1.00';
+our $VERSION = '1.000000';
 
 my $baseclass = 'Mojolicious::Controller';
 
