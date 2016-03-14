@@ -1,4 +1,5 @@
 requires "Import::Into" => "0";
+requires "Mojolicious::Plugin::ExposeControllerMethod" => "1.000000";
 requires "Moose" => "0";
 requires "Moose::Exporter" => "0";
 requires "Moose::Role" => "0";
