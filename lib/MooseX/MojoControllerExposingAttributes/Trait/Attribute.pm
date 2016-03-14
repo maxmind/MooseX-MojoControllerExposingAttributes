@@ -53,7 +53,7 @@ Mojolicious application to provide the C<ctrl> helper.
 
 Provide an alternative name this attribute should be exposed as
 
-    # expose the rose attrbite so it can be called via ctrl->other_name
+    # expose the rose attribute so it can be called via ctrl->other_name
     # rather than ctrl->rose
     has rose => (
         is                => 'ro',
