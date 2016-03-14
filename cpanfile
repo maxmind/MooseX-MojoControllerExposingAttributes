@@ -4,7 +4,7 @@ requires "Moose::Exporter" => "0";
 requires "Moose::Role" => "0";
 requires "MooseX::NonMoose" => "0";
 requires "MooseX::Types::Moose" => "0";
-requires "perl" => "5.006";
+requires "perl" => "5.01301";
 requires "strict" => "0";
 requires "warnings" => "0";
 
@@ -13,10 +13,11 @@ on 'test' => sub {
   requires "File::Basename" => "0";
   requires "File::Spec" => "0";
   requires "File::Spec::Functions" => "0";
+  requires "Mojo::Base" => "0";
   requires "Test::Mojo" => "0";
   requires "Test::More" => "0.96";
   requires "lib" => "0";
-  requires "perl" => "5.006";
+  requires "perl" => "5.01301";
 };
 
 on 'test' => sub {

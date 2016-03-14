@@ -14,8 +14,6 @@ MooseX::MojoControllerExposingAttributes - expose controller attributes to Mojol
         traits => ['ExposeMojo'],
     );
 
-    has some
-
     # then later in a template:
     <%= ctrl->some_attribute %>
 
