@@ -33,6 +33,7 @@ sub get_read_method_name_for_mojo_helper {
     return $self->_make_mojo_method_name_to_attribute_reader_name_map->{ $wanted_name };
 }
 
+no Moose::Role;
 1;
 
 =head1 NAME

@@ -12,6 +12,7 @@ sub controller_method_name {
     return $self->meta->get_read_method_name_for_mojo_helper($what);
 }
 
+no Moose::Role;
 1;
 
 =head1 SYNOPSIS

@@ -63,6 +63,7 @@ add_packages = Test::Builder
 equivalent_modules = MooseX::MojoControllerExposingAttributes
 
 [TestingAndDebugging::RequireUseWarnings]
+equivalent_modules = MooseX::MojoControllerExposingAttributes
 
 [-ControlStructures::ProhibitCascadingIfElse]
 

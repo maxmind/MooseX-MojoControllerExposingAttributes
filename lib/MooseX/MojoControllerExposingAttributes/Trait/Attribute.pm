@@ -7,10 +7,11 @@ our $VERSION = '1.000000';
 use MooseX::Types::Moose qw( Str );
 
 has expose_to_mojo_as => (
-    is      => 'ro',
-    isa     => Str,  # todo, this should be a method name constraint
+    is  => 'ro',
+    isa => Str,    # todo, this should be a method name constraint
 );
 
+no Moose::Role;
 1;
 
 =head1 NAME
