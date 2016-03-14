@@ -34,7 +34,7 @@ MooseX::MojoControllerExposingAttributes::Trait::Attribute - trait used to expos
 
 =head1 DESCRIPTION
 
-This class is an attribute trait that can be applied with C<ExposeMojo>. 
+This class is an attribute trait that can be applied with C<ExposeMojo>.
 
 Applying this trait to an attribute within a L<Mojolicious::Controller> subclass
 allows reading of that attribute from within a Mojolicious template by calling
