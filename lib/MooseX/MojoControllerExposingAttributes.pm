@@ -78,6 +78,11 @@ __END__
 
 =head1 DESCRIPTION
 
+This module is for advanced use.  C<$c>/C<$self> are already made available in
+templates and are likely sufficient for the majority of use cases.  This module
+was created in order to expose L<Moose> attributes in a way where you don't
+have to stash them every single time you want to use them.
+
 This class allows you to expose I<selected> Moose attributes from your
 Mojolicious controller to your templates by marking them with the C<ExposeMojo>
 trait.
