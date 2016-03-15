@@ -1,7 +1,7 @@
 package MooseX::MojoControllerExposingAttributes::Role::Class;
 use Moose::Role;
 
-our $VERSION = '1.000000';
+our $VERSION = '1.000001';
 
 sub controller_method_name {
     my $self = shift;

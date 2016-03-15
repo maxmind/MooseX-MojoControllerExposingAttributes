@@ -3,7 +3,7 @@ use Moose::Role;
 
 use MooseX::Types::Moose qw( HashRef );
 
-our $VERSION = '1.000000';
+our $VERSION = '1.000001';
 
 has _mojo_method_name_to_attribute_reader_name_map => (
     is      => 'ro',
