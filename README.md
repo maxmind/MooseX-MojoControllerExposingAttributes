@@ -7,15 +7,14 @@ MooseX::MojoControllerExposingAttributes - expose controller attributes to Mojol
     package MyApp::Controller::Example;
     use MooseX::MojoControllerExposingAttributes;
 
-    ...
+    ...;
 
     has some_attribute => (
         is     => 'ro',
         traits => ['ExposeMojo'],
     );
 
-    # then later in a template:
-    <%= ctrl->some_attribute %>
+    # then later in a template: <%= ctrl->some_attribute %>
 
 # DESCRIPTION
 
@@ -54,7 +53,7 @@ the class consumes) that are exposed to Mojolicious.
     has some_attribute_with_a_really_long_name => (
        is                => 'ro',
        traits            => ['ExposeMojo'],
-       expose_to_mojo_as => 'shorter_name',     
+       expose_to_mojo_as => 'shorter_name',
     );
 
 In order to get the `ctrl` helper you should make sure you've loaded the
@@ -73,7 +72,7 @@ Then you'll be able to access your attributes from within templates that
 are rendered from that controller:
 
     some attribute: <%= ctrl->some_attribute %>
-    some attribute with a really long name: <%= ctrl->shorter_name %> 
+    some attribute with a really long name: <%= ctrl->shorter_name %>
 
 # BUGS
 

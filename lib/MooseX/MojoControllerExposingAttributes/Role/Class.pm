@@ -12,6 +12,7 @@ sub controller_method_name {
     return $self->meta->get_read_method_name_for_mojo_helper($what);
 }
 
+no Moose::Role;
 1;
 
 =head1 SYNOPSIS
@@ -25,12 +26,15 @@ sub controller_method_name {
 
 This is a role that is designed to be consumed by Mojolicious::Controller
 subclasses to provide them with the C<controller_method_name> method that is
-required by the C<ctrl> helper.  This method simply asks the consumer's
-metaclass what the correct read method is for the attribute exposed to
-Mojolicious as the passed value is.
+required by the C<ctrl> helper.
 
 You don't want to manually consume this role, but rather use the
 L<MMooseX::MojoControllerExposingAttributes> module to set things up for you.
+
+=head2 controller_method_name
+
+This method simply asks the consumer's metaclass what the correct read method
+is for the attribute exposed to Mojolicious as the passed value is.
 
 =head1 SEE ALSO
 

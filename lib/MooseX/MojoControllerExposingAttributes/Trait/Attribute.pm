@@ -7,11 +7,13 @@ our $VERSION = '1.000000';
 use MooseX::Types::Moose qw( Str );
 
 has expose_to_mojo_as => (
-    is      => 'ro',
-    isa     => Str,  # todo, this should be a method name constraint
+    is  => 'ro',
+    isa => Str,    # todo, this should be a method name constraint
 );
 
+no Moose::Role;
 1;
+__END__
 
 =head1 NAME
 
@@ -22,19 +24,18 @@ MooseX::MojoControllerExposingAttributes::Trait::Attribute - trait used to expos
     package MyApp::Controller::Example;
     use MooseX::MojoControllerExposingAttributes;
 
-    ...
+    ...;
 
     has some_attribute => (
         is     => 'ro',
         traits => ['ExposeMojo'],
     );
 
-    # then later in a template:
-    <%= ctrl->some_attribute %>
+    # then later in a template: <%= ctrl->some_attribute %>
 
 =head1 DESCRIPTION
 
-This class is an attribute trait that can be applied with C<ExposeMojo>. 
+This class is an attribute trait that can be applied with C<ExposeMojo>.
 
 Applying this trait to an attribute within a L<Mojolicious::Controller> subclass
 allows reading of that attribute from within a Mojolicious template by calling
@@ -52,7 +53,7 @@ Mojolicious application to provide the C<ctrl> helper.
 
 Provide an alternative name this attribute should be exposed as
 
-    # expose the rose attrbite so it can be called via ctrl->other_name
+    # expose the rose attribute so it can be called via ctrl->other_name
     # rather than ctrl->rose
     has rose => (
         is                => 'ro',

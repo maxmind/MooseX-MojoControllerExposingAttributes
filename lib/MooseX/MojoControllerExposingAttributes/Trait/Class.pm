@@ -6,9 +6,10 @@ use MooseX::Types::Moose qw( HashRef );
 our $VERSION = '1.000000';
 
 has _mojo_method_name_to_attribute_reader_name_map => (
-    is => 'ro',
-    isa => HashRef,
-    lazy => 1,
+    is      => 'ro',
+    isa     => HashRef,
+    lazy    => 1,
+    handles => { _get_mojo_attribute_name_for_method => 'get' },
     builder => '_make_mojo_method_name_to_attribute_reader_name_map',
 );
 
@@ -16,23 +17,32 @@ has _mojo_method_name_to_attribute_reader_name_map => (
 sub _make_mojo_method_name_to_attribute_reader_name_map {
     my $self = shift;
 
-    my $output = {};
-    foreach my $attr (sort { $a->name cmp $b->name } $self->get_all_attributes) {
-        next unless $attr->can('does') && $attr->does('MooseX::MojoControllerExposingAttributes::Trait::Attribute');
-        $output->{ $attr->expose_to_mojo_as || $attr->name } = $attr->get_read_method;
+    my %output;
+    foreach
+        my $attr ( sort { $a->name cmp $b->name } $self->get_all_attributes )
+    {
+        next
+            unless $attr->can('does')
+            && $attr->does(
+            'MooseX::MojoControllerExposingAttributes::Trait::Attribute');
+        $output{ $attr->expose_to_mojo_as || $attr->name }
+            = $attr->get_read_method;
     }
-    return $output;
+    return \%output;
 }
 
 sub get_read_method_name_for_mojo_helper {
-    my $self = shift;
+    my $self        = shift;
     my $wanted_name = shift;
 
-    return $self->_mojo_method_name_to_attribute_reader_name_map->{ $wanted_name }
+    return $self->_get_mojo_attribute_name_for_method($wanted_name)
         if $self->is_immutable;
-    return $self->_make_mojo_method_name_to_attribute_reader_name_map->{ $wanted_name };
+    return
+        $self->_make_mojo_method_name_to_attribute_reader_name_map
+        ->{$wanted_name};
 }
 
+no Moose::Role;
 1;
 
 =head1 NAME
