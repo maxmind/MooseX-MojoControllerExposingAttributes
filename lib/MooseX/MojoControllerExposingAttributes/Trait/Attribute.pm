@@ -13,6 +13,7 @@ has expose_to_mojo_as => (
 
 no Moose::Role;
 1;
+__END__
 
 =head1 NAME
 
@@ -23,15 +24,14 @@ MooseX::MojoControllerExposingAttributes::Trait::Attribute - trait used to expos
     package MyApp::Controller::Example;
     use MooseX::MojoControllerExposingAttributes;
 
-    ...
+    ...;
 
     has some_attribute => (
         is     => 'ro',
         traits => ['ExposeMojo'],
     );
 
-    # then later in a template:
-    <%= ctrl->some_attribute %>
+    # then later in a template: <%= ctrl->some_attribute %>
 
 =head1 DESCRIPTION
 
