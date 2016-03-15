@@ -55,11 +55,12 @@ sub import {
 }
 
 1;
+
+# ABSTRACT: Expose controller attributes to Mojolicious
+
 __END__
 
-=head1 NAME
-
-MooseX::MojoControllerExposingAttributes - expose controller attributes to Mojolicious
+=pod
 
 =head1 SYNOPSIS
 
@@ -150,3 +151,5 @@ using Mojolicious::Controller
 L<Mojolicious::Plugin::ExposeControllerMethod>
 
 L<MooseX::MojoControllerExposingAttributes::Trait::Attribute>
+
+=cut
