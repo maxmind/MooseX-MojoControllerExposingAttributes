@@ -1,6 +1,10 @@
 # NAME
 
-MooseX::MojoControllerExposingAttributes - expose controller attributes to Mojolicious
+MooseX::MojoControllerExposingAttributes - Expose controller attributes to Mojolicious
+
+# VERSION
+
+version 1.000001
 
 # SYNOPSIS
 
@@ -84,3 +88,19 @@ using Mojolicious::Controller
 [Mojolicious::Plugin::ExposeControllerMethod](https://metacpan.org/pod/Mojolicious::Plugin::ExposeControllerMethod)
 
 [MooseX::MojoControllerExposingAttributes::Trait::Attribute](https://metacpan.org/pod/MooseX::MojoControllerExposingAttributes::Trait::Attribute)
+
+# AUTHOR
+
+Mark Fowler <mfowler@maxmind.com>
+
+# CONTRIBUTORS
+
+- Dave Rolsky <drolsky@maxmind.com>
+- Olaf Alders <oalders@maxmind.com>
+
+# COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2015 - 2016 by MaxMind, Inc.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.

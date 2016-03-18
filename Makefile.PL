@@ -7,7 +7,7 @@ use 5.013010;
 use ExtUtils::MakeMaker;
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "expose controller attributes to Mojolicious",
+  "ABSTRACT" => "Expose controller attributes to Mojolicious",
   "AUTHOR" => "Mark Fowler <mfowler\@maxmind.com>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
