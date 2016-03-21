@@ -22,6 +22,11 @@ version 1.000001
 
 # DESCRIPTION
 
+This module is for advanced use.  `$c`/`$self` are already made available in
+templates and are likely sufficient for the majority of use cases.  This module
+was created in order to expose [Moose](https://metacpan.org/pod/Moose) attributes in a way where you don't
+have to stash them every single time you want to use them.
+
 This class allows you to expose _selected_ Moose attributes from your
 Mojolicious controller to your templates by marking them with the `ExposeMojo`
 trait.
