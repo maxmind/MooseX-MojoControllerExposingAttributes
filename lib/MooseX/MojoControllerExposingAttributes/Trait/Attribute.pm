@@ -2,7 +2,7 @@ package MooseX::MojoControllerExposingAttributes::Trait::Attribute;
 use Moose::Role;
 Moose::Util::meta_attribute_alias('ExposeMojo');
 
-our $VERSION = '1.000001';
+our $VERSION = '1.000002';
 
 use MooseX::Types::Moose qw( Str );
 
